@@ -92,5 +92,41 @@
             "result": "bar"
          }
     ]
+},
+{
+   "given": {
+      "foo-bar": {
+         "bar": "car"
+      }
+   },
+   "cases": [
+      {
+         "expression": "\"foo-bar\"",
+         "result": {
+            "bar": "car"
+         }
+      }
+   ]
+},
+{
+   "given": {
+      "custom:groups": [
+         "foo",
+         "bar"
+      ]
+   },
+   "cases": [
+      {
+         "expression": "\"custom:groups\"",
+         "result": [
+            "foo",
+            "bar"
+         ]
+      },
+      {
+         "expression": "contains(\"custom:groups\"[*], 'foo') && 'Admin' || 'Editor'",
+         "result": "Admin"
+      }
+   ]
 }
 ]
